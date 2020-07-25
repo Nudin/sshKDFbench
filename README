@@ -1,0 +1,11 @@
+Test how how long a certain number of rounds of OpenSSH's KDF takes.
+
+You private key should never be stored unencrypted on disc. It should therefore
+be encrypted with a password. Since human usable passwords are weak a key
+derivation function (KDF) should be used. KDFs are basically hash functions
+designed to be slow. The KDF should be used several times to make it unfeasible
+to brute force the password. The more rounds the harder is it to crack, but the
+longer you self need to wait every time you decrypt the key.
+
+This script tests how long a given number of rounds take. Use the highest
+setting that is still feasible for you to use.
